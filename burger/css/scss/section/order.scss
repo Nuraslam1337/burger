@@ -1,0 +1,205 @@
+.order {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  background: url("../img/order-bg.png") center center no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  font-size: rem(14px);
+  color: #fff;
+}
+
+.order__title {
+  font-family: Gagalin, sans-serif;
+  font-size: rem(72px);
+  font-weight: normal;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: rem(90px);
+  @include tablets {
+    margin-bottom: rem(15px);
+  }
+}
+
+.form__elem {
+  box-sizing: border-box;
+}
+
+.order__form {
+  display: flex;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 19%;
+  }
+  @include phones {
+    margin: 0;
+  }
+}
+
+.form__col {
+  width: 50%;
+  margin-right: rem(20px);
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: rem(20px);
+
+  &-radio {
+    justify-content: flex-start;
+    @include phones {
+      justify-content: center;
+    }
+  }
+
+  &-buttons {
+    @include tablets {
+      margin-top: 40px;
+    }
+    @include phones {
+      justify-content: center;
+    }
+  }
+
+  &-buttons > .order__button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+}
+
+.form__block {
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin-left: rem(20px);
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.form__block-phones {
+  @include phones {
+    display: none;
+  }
+}
+
+.form__radio {
+  position: relative;
+  white-space: nowrap;
+  margin-right: rem(20px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.radio__item {
+  position: absolute;
+  left: -9999999px;
+}
+
+.radio__item-fake {
+  width: rem(16px);
+  height: rem(16px);
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: rem(0px);
+    height: rem(0px);
+    border-radius: 50%;
+    background: $orange;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width .3s, height .3s;
+  }
+}
+
+.form__radio > .radio__item:checked + .radio__item-fake {
+  &:after {
+    width: rem(8px);
+    height: rem(8px);
+  }
+}
+
+.form__radio-checkbox {
+  .radio__item-fake {
+    border-radius: rem(0px);
+  }
+  .radio__item {
+    &+.radio__item-fake {
+      &:after {
+        background: transparent;
+      }
+    }
+  }
+  .radio__item:checked {
+    &+.radio__item-fake {
+      &:after {
+        background: url("../icons/check.svg") no-repeat transparent;
+        background-size: contain;
+        width: rem(11px);
+        height: rem(11px);
+      }
+    }
+  }
+}
+
+.form__block-title {
+  margin-left: rem(10px);
+  margin-bottom: rem(5px);
+
+  &-radio {
+    margin-bottom: 0;
+  }
+}
+
+.form__block-input {
+  border: 1px solid #d1cfcb;
+  border-radius: rem(5px);
+  padding: rem(5px);
+  width: 100%;
+  @include tablets {
+    &:focus{
+      border: 1px solid $yellow;
+      outline: none;
+    }
+  }
+
+  &-textarea {
+    height: rem(110px);
+    resize: none;
+  }
+}
+
+.form__comment {
+  display: flex;
+  width: 50%;  
+  flex-wrap: wrap;
+}
+
+.reset__button {
+  margin-left: rem(20px);
+  font-family: "Ubuntu Light", sans-serif;
+  font-size: rem(14px);
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}

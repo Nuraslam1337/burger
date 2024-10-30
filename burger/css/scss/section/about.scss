@@ -1,0 +1,97 @@
+.about {
+  background: url("../img/about-bg.png") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+  min-height: 650px;
+  display: flex;
+  
+  @include tablets {
+    background: url("../img/about-bg-tablets.png") center center no-repeat;
+  }
+  @include phones {
+    background: url("../img/about-bg-phones.png") center center no-repeat;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-self: center;
+  }
+
+  &__title {
+    display: flex;
+    font-family: Gagalin;
+    font-size: rem(72px);
+    color: $black;
+  }
+
+  &__text {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;  
+    margin-top: rem(90px);
+    width: 100%;
+    @include phones {
+      flex-direction: column;
+      margin-top: rem(85px);
+    }
+  }
+}
+
+.text__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 31%;
+  @include phones {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.pic__img {
+  width: rem(80px);
+  height: rem(80px);
+  &-meat {
+    fill: $orange;
+  }
+  &-hand {
+    fill: $yellow;
+  }
+  &-natural {
+    fill: #8ac03e;
+  }
+}
+
+.card__block {
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    margin-left: rem(30px);
+  }
+}
+
+.card__title {
+  font-family: Lifehack;
+  font-size: rem(24px);
+  color: $black;
+  text-align: center;
+  margin-top: rem(35px);
+  @include phones {
+    text-align: left;
+  }
+}
+
+.card__info {
+  text-align: center;
+  margin-top: rem(16px);    
+  font-family: "Ubuntu Light";
+  color: $black;
+  font-size: rem(14.03px);
+  line-height: 1.5em;
+  @include phones {
+    text-align: left;
+  }
+} 

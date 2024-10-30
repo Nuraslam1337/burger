@@ -1,0 +1,93 @@
+.location {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__container {
+  width: 95%;
+  max-width: 940px;
+  margin: 0 auto;
+  display: flex;
+  
+  @include phones {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  background: url('../img/footer-bg.png') center center no-repeat;
+  background-size: cover;
+}
+
+.contacts {
+  width: 50%;
+  padding-top: rem(12px);
+  padding-bottom: rem(12px);
+  @include phones {
+    width: 100%;
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+  }
+}
+
+.address {
+  color: #fff;
+  font-size: rem(14px);
+  font-family: "Ubuntu Light", sans-serif;
+  margin-bottom: rem(10px);
+}
+
+.phone__pic {
+  width: rem(12px);
+  height: rem(12px);
+  fill: $orange;
+  margin-right: rem(8px);
+}
+
+.phone__number {
+  text-decoration: none;
+  color: $orange;
+  font-size: rem(14px);
+  font-family: "Ubuntu Bold", sans-serif;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;  
+  width: 50%;
+  @include phones {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: rem(20px);
+  }
+}
+
+.socials__link {
+  text-decoration: none;
+}
+
+.socials__pic {
+  width: rem(21px);
+  height: rem(21px);
+  fill: #5b5b5b;
+  margin-right: rem(20px);  
+
+  &-tw {
+    margin-right: 0;
+  }
+
+  &:hover {
+    fill: #fff;
+    transition: 0.5s;
+  }
+}
+

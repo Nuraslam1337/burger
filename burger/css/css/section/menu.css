@@ -1,0 +1,11 @@
+.acco-menu {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/menu-bg.png") no-repeat;
+  background-size: cover;
+  min-height: 650px; }
